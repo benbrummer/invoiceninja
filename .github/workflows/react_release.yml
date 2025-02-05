@@ -34,11 +34,11 @@ jobs:
           # chmod -R a=r,u+w,a+X .          
           ls -al ./vendor/bin/*
           # find . -path ./vendor -prune -type f -o -exec chmod 644 {} \+
-          find . -type f -exec chmod 644 {} \+
+          find . -type f -path ./vendor/bin -prune -exec chmod 644 {} \+
           # find . -path ./vendor -prune -type d -o -exec chmod 755 {} \+
           find . -type d -exec chmod 755 {} \+
           ls -al ./vendor/bin/*
-          ls -al
+          # ls -al
 
       - name: Build project
         run: |
