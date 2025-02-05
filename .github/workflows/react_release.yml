@@ -1,3 +1,5 @@
+on: push
+
 name: React Release
 
 jobs:
