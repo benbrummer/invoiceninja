@@ -34,9 +34,9 @@ jobs:
           # chmod -R a=r,u+w,a+X .          
           ls -al ./vendor/bin/*
           # find . -path ./vendor -prune -type f -o -exec chmod 644 {} \+
-          find . -type f -path ./vendor -prune -o -exec chmod 644 {} \+
+          find . -path ./vendor -prune -o -type f -exec chmod 644 {} \+
           # find . -path ./vendor -prune -type d -o -exec chmod 755 {} \+
-          find . -type d -path ./vendor -prune -o -exec chmod 755 {} \+
+          find . -path ./vendor -prune -o -type d -exec chmod 755 {} \+
           ls -al ./vendor/bin/*
           ls -al
 
