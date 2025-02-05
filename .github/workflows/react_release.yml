@@ -36,7 +36,7 @@ jobs:
           # find . -path ./vendor -prune -type f -o -exec chmod 644 {} \+
           find . -path ./vendor -prune -o -type f -exec chmod 644 {} \+
           # find . -path ./vendor -prune -type d -o -exec chmod 755 {} \+
-          find . -path ./vendor -prune -o -type d -exec chmod 755 {} \+
+          find . -path ./vendo -prune -o -type d -exec chmod 755 {} \+
           ls -al ./vendor/bin/*
           ls -al
 
