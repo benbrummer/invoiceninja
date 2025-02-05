@@ -30,7 +30,7 @@ jobs:
 
       - name: Prepare React FrontEnd
         run: |
-          git clone https://${{secrets.commit_secret}}@github.com/invoiceninja/ui.git
+          git clone https://github.com/invoiceninja/ui.git
           cd ui
           git checkout develop
           sed -i 's/VITE_IS_TEST=true/VITE_IS_TEST=false/' .env.example
@@ -55,9 +55,12 @@ jobs:
           rm -rf .git
           rm .env || true
           rm -rf ui || true
-          # Set permissions: directories 755, files 644        
-          chmod -R a=r,u+w,a+X .
-          pwd
+          # Set permissions: directories 755, files 644
+          # chmod -R a=r,u+w,a+X .          
+          ls -al ./vendor/bin/*
+          find . -path ./vendor -prune -type f -o -exec chmod 644 {} \+
+          find . -path ./vendor -prune -type d -o -exec chmod 755 {} \+
+          ls -al ./vendor/bin/*
           ls -al
 
       - name: Build project
